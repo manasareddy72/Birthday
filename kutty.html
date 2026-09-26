@@ -1,0 +1,807 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Kutty ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:"Segoe UI",sans-serif;
+    background:
+        radial-gradient(circle at top,#ffffff,#ffeaf3 45%,#eadcff);
+    color:#583d52;
+}
+
+/* ---------------- MAIN CARD ---------------- */
+
+.card{
+    width:90%;
+    max-width:700px;
+    margin:50px auto;
+    padding:45px 30px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.78);
+    backdrop-filter:blur(15px);
+
+    border-radius:35px;
+
+    box-shadow:
+        0 20px 60px rgba(130,80,120,0.25);
+
+    animation:cardAppear 1.5s ease;
+    position:relative;
+    z-index:5;
+}
+
+@keyframes cardAppear{
+    from{
+        opacity:0;
+        transform:translateY(60px) scale(.85);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* ---------------- TITLE ---------------- */
+
+.small-title{
+    font-size:18px;
+    letter-spacing:3px;
+    color:#a06b8e;
+}
+
+h1{
+    margin-top:10px;
+    font-size:48px;
+    color:#d94f88;
+
+    text-shadow:
+        0 0 10px rgba(217,79,136,.3);
+
+    animation:titleGlow 2s infinite;
+}
+
+@keyframes titleGlow{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+        text-shadow:
+            0 0 25px rgba(217,79,136,.5);
+    }
+}
+
+.subtitle{
+    margin-top:10px;
+    font-size:20px;
+}
+
+/* ---------------- LOTUS ---------------- */
+
+.lotus{
+    font-size:65px;
+    margin:15px;
+    animation:lotusFloat 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 10px white);
+}
+
+@keyframes lotusFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-3deg);
+    }
+
+    50%{
+        transform:translateY(-10px) rotate(3deg);
+    }
+}
+
+/* ---------------- CAKE ---------------- */
+
+.cake{
+    width:230px;
+    margin:80px auto 60px;
+    position:relative;
+}
+
+.cake-top{
+    height:65px;
+    background:#ffb1c8;
+    border-radius:50%;
+    position:relative;
+    z-index:2;
+}
+
+.cake-body{
+    width:210px;
+    height:100px;
+    margin:-25px auto 0;
+
+    background:linear-gradient(
+        #ff8fac,
+        #ed6f96
+    );
+
+    border-radius:10px 10px 25px 25px;
+
+    box-shadow:
+        inset 0 -10px rgba(190,70,110,.15);
+}
+
+.cream{
+    position:absolute;
+    width:210px;
+    height:25px;
+    background:white;
+    border-radius:50%;
+    top:50px;
+    left:10px;
+}
+
+/* ---------------- CANDLES ---------------- */
+
+.candles{
+    position:absolute;
+    top:-75px;
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    gap:35px;
+}
+
+.candle{
+    width:15px;
+    height:65px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            white 0px,
+            white 7px,
+            #ff6f91 7px,
+            #ff6f91 14px
+        );
+
+    border-radius:5px;
+    position:relative;
+}
+
+.flame{
+    width:20px;
+    height:28px;
+
+    background:#ffb300;
+
+    border-radius:50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    position:absolute;
+
+    top:-27px;
+    left:-2px;
+
+    box-shadow:
+        0 0 20px #ffb300;
+
+    animation:flicker .5s infinite alternate;
+}
+
+@keyframes flicker{
+
+    from{
+        transform:rotate(-45deg) scale(1);
+    }
+
+    to{
+        transform:rotate(-40deg) scale(1.2);
+    }
+}
+
+/* ---------------- MESSAGE ---------------- */
+
+.message{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.highlight{
+    color:#d94f88;
+    font-weight:bold;
+}
+
+/* ---------------- LOVE TEXT ---------------- */
+
+.love-box{
+
+    margin:30px auto;
+
+    padding:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #fff1f7
+        );
+
+    border-radius:20px;
+
+    box-shadow:
+        0 10px 25px rgba(200,100,150,.15);
+
+    animation:softPulse 3s infinite;
+}
+
+@keyframes softPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.02);
+    }
+}
+
+.love-box p{
+    margin:8px;
+}
+
+/* ---------------- SURPRISE ---------------- */
+
+.surprise{
+
+    margin:35px auto;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    border:2px dashed #e48bad;
+
+    animation:surpriseAppear 3s ease infinite alternate;
+}
+
+@keyframes surpriseAppear{
+
+    from{
+        box-shadow:0 0 5px rgba(220,100,150,.1);
+    }
+
+    to{
+        box-shadow:0 0 25px rgba(220,100,150,.35);
+    }
+}
+
+.surprise h2{
+    color:#d94f88;
+    margin-bottom:10px;
+}
+
+/* ---------------- QUOTE ---------------- */
+
+.quote{
+
+    margin:20px auto;
+
+    padding:18px;
+
+    max-width:520px;
+
+    border-left:5px solid #d94f88;
+
+    background:#ffe8f1;
+
+    border-radius:12px;
+
+    font-style:italic;
+
+    font-size:18px;
+}
+
+/* ---------------- BUTTON ---------------- */
+
+button{
+
+    border:none;
+
+    padding:15px 30px;
+
+    border-radius:30px;
+
+    background:#d94f88;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(217,79,136,.3);
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:scale(1.1);
+
+    background:#c63875;
+}
+
+/* ---------------- HIDDEN MESSAGE ---------------- */
+
+.hidden-message{
+
+    display:none;
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    color:#c83f77;
+
+    animation:messagePop 1s ease;
+}
+
+@keyframes messagePop{
+
+    from{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ---------------- FLOATING HEARTS ---------------- */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    font-size:25px;
+
+    animation:heartFloat 8s linear infinite;
+
+    z-index:1;
+}
+
+@keyframes heartFloat{
+
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------------- CONFETTI ---------------- */
+
+.confetti{
+
+    position:fixed;
+
+    width:10px;
+    height:15px;
+
+    top:-20px;
+
+    z-index:20;
+
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+/* ---------------- STICKERS ---------------- */
+
+.sticker{
+
+    position:fixed;
+
+    font-size:45px;
+
+    z-index:3;
+
+    animation:stickerFloat 3s ease-in-out infinite;
+}
+
+.sticker1{
+    top:10%;
+    left:5%;
+}
+
+.sticker2{
+    top:15%;
+    right:5%;
+}
+
+.sticker3{
+    bottom:10%;
+    left:5%;
+}
+
+.sticker4{
+    bottom:8%;
+    right:5%;
+}
+
+@keyframes stickerFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-15px) rotate(5deg);
+    }
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.footer{
+
+    margin-top:30px;
+
+    font-size:20px;
+
+    color:#a05278;
+
+    font-weight:bold;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:600px){
+
+    .card{
+        margin:25px auto;
+        padding:35px 20px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+    .subtitle{
+        font-size:17px;
+    }
+
+    .message{
+        font-size:16px;
+    }
+
+    .sticker{
+        font-size:30px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- FLOATING HEARTS -->
+
+<div class="heart" style="left:10%;animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%;animation-delay:2s;">💗</div>
+<div class="heart" style="left:55%;animation-delay:4s;">💕</div>
+<div class="heart" style="left:80%;animation-delay:1s;">💖</div>
+
+
+<!-- CUTE STICKERS -->
+
+<div class="sticker sticker1">🎀</div>
+<div class="sticker sticker2">🧸</div>
+<div class="sticker sticker3">💝</div>
+<div class="sticker sticker4">✨</div>
+
+
+<!-- MAIN CARD -->
+
+<div class="card">
+
+    <div class="small-title">
+        A LITTLE SURPRISE FOR SOMEONE SPECIAL
+    </div>
+
+
+    <h1>
+        🎂 HAPPY BIRTHDAY KUTTY 🎂
+    </h1>
+
+
+    <div class="lotus">
+        🪷
+    </div>
+
+
+    <p class="subtitle">
+        Dear <span class="highlight">Keerthi</span> ❤️
+    </p>
+
+
+    <!-- CAKE -->
+
+    <div class="cake">
+
+        <div class="candles">
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+
+        </div>
+
+
+        <div class="cake-top"></div>
+
+        <div class="cake-body">
+            <div class="cream"></div>
+        </div>
+
+    </div>
+
+
+    <!-- MAIN MESSAGE -->
+
+    <div class="message">
+
+        <p>
+            Today is not just another day... ✨
+        </p>
+
+        <p>
+            It's the day a beautiful soul named
+            <span class="highlight">Keerthi</span>
+            came into this world. 🥹❤️
+        </p>
+
+        <br>
+
+        <p>
+            Some people enter our lives as friends...
+            and somehow become a very special part of our hearts.
+        </p>
+
+    </div>
+
+
+    <!-- LOVABLE TEXT -->
+
+    <div class="love-box">
+
+        <p>
+            🌸 You are one of those rare people who make
+            ordinary moments feel special.
+        </p>
+
+        <p>
+            🫶 Your presence makes memories more beautiful.
+        </p>
+
+        <p>
+            💕 And honestly... life is a little happier
+            with a person like you around.
+        </p>
+
+    </div>
+
+
+    <!-- QUOTES -->
+
+    <div class="quote">
+
+        "Some people are like flowers...
+        they make every place a little brighter
+        just by being there." 🪷
+
+    </div>
+
+
+    <div class="quote">
+
+        "No matter how many birthdays come and go,
+        I hope your smile never changes." ❤️
+
+    </div>
+
+
+    <!-- SURPRISE -->
+
+    <div class="surprise">
+
+        <h2>
+            🎁 WAIT... THERE'S A LITTLE SURPRISE!
+        </h2>
+
+        <p>
+            Don't leave without clicking this... 👀
+        </p>
+
+        <br>
+
+        <button onclick="surprise()">
+            💥 CLICK FOR SURPRISE 💥
+        </button>
+
+
+        <div id="hiddenMessage" class="hidden-message">
+
+            🥹❤️ Keerthi, you're not just a friend...
+            you're one of those people who became
+            a beautiful memory in my life without
+            even trying.
+
+            <br><br>
+
+            🪷 Keep smiling.
+            Keep shining.
+            Keep being the amazing Kutty you are.
+
+            <br><br>
+
+            🎂 HAPPY BIRTHDAY ONCE AGAIN! 🎂
+
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+
+        May your year be filled with
+        happiness, laughter & beautiful memories. 🌸
+
+        <br><br>
+
+        🪷 With lots of love & endless wishes 🪷
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* ---------------- SURPRISE FUNCTION ---------------- */
+
+function surprise(){
+
+    document.getElementById("hiddenMessage").style.display="block";
+
+    /* CREATE CONFETTI */
+
+    for(let i=0;i<120;i++){
+
+        let confetti=document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.style.left=Math.random()*100+"vw";
+
+        confetti.style.background=
+            ["#ff6f91","#ffd166","#9b5de5","#00bbf9","#06d6a0","#ffffff"]
+            [Math.floor(Math.random()*6)];
+
+        confetti.style.animationDuration=
+            (2+Math.random()*3)+"s";
+
+        confetti.style.transform=
+            "rotate("+Math.random()*360+"deg)";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
+    }
+
+    /* EXTRA HEARTS */
+
+    for(let i=0;i<15;i++){
+
+        let heart=document.createElement("div");
+
+        heart.innerHTML="💖";
+
+        heart.style.position="fixed";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.top=Math.random()*100+"vh";
+        heart.style.fontSize="30px";
+        heart.style.zIndex="30";
+
+        document.body.appendChild(heart);
+
+        heart.animate(
+            [
+                {
+                    transform:"scale(0)",
+                    opacity:0
+                },
+
+                {
+                    transform:"scale(1.5)",
+                    opacity:1
+                },
+
+                {
+                    transform:"scale(0)",
+                    opacity:0
+                }
+            ],
+            {
+                duration:1800
+            }
+        );
+
+        setTimeout(()=>{
+            heart.remove();
+        },1800);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
+```
